@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<!-- INICIO CABEÇALHO -->
+
+<head>
+    <head>
+        <link rel="stylesheet" href="../css/formatacao.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+        <!-- Código bootstrap em CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+     
+    
+        <!-- Código bootstrap em JS-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+        <!-- Chamada da linha Style.css  -->
+        <link rel="stylesheet" href="..\css\style.css">
+
+    </head>
+    
+<!-- FIM DO CABEÇALHO -->
+
+
+<!-- INICIO JS -->
+<script>
+    function validarSolicitacao(){
+        var nome_tecnico=formuser.nomeTecnico.value;
+        var operadora ;                                     //como recuperar esse valor?
+        var telefone=formuser.celular.value;
+        var rgCPF=formuser.rgCPF.value;
+        var doc=formuser.documento.value;
+        var pdv_id = ;                                     //como recuperar esse valor?
+        var data=formuser.data.value;
+        var horario=formuser.horario.value;
+
+        if(nome_tecnico=="" || nome_tecnico.indexOf(" ")==-1){
+            alert("Por favor digite o nome e sobrenome do técnico");
+            formuser.nome_tecnico.focus;
+            return false;
+        }
+        // ADICIONAR A VALIDAÇÃO DO CPF --> Fazer fork do existente no GIT
+        //if(rgCPF==CPF){
+        //
+        //}
+    }
+
+
+</script>
+
+<!-- FIM JS -->
+
+
+<!-- DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-3"><h5><div align="center"><img src="../img/banner.png" width="100%" height="100%"></div></h5></div>
+</div>
+    
+    
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-3 fonteSLA"><h1 align="center"> SLA</h1></div>
+    <div class="col-md-12 col-sm-12 col-xs-3 fonteSLALongo"><h5 align="center"> Solicitação de acessos</h5></div>
+</div>
+
+
+<!-- FIM DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
+
+<!-- CAMPOS PARA PREENCHIMENTO --> 
+
+<div class="col-md-12 col-sm-12 col-xs-3 bordaFiltro">
+    <form name="formuser" action="" method="POST">
+    <fieldset align="left" heigth="60%">
+    <legend><b><h6>DADOS DO REPRESENTANTE</h6></b></legend><br>
+
+    <div class="row">
+        <div class="col-md-6 col-sm-3 col-xs-3">
+            Nome do técnico: <input  type="text" name="nomeTecnico" placeholder="Nome completo" size="50" required></div>
+        <div class="col-md-6 col-sm-3 col-xs-3">
+            Celular.........: <input  type="text" name="celular" placeholder="(XX) XXXXX XXXX" required><br><br></div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-sm-3 col-xs-3">
+            Tipo de documento:  <INPUT TYPE="radio" NAME="rgCPF" VALUE="RG" required> RG
+            <INPUT TYPE="radio" NAME="rgCPF" VALUE="CPF" required> CPF<br><br></div>
+        <div class="col-md-6 col-sm-3 col-xs-3">
+            Documento: <input  type="text" name="documento" required><br><br><br></div>
+
+    </div>
+
+   
+    <B>DADOS DO ACESSO</b><br><br>
+
+    <div class="row">
+        <div class="col-md-6 col-sm-3 col-xs-3">
+        Operadora.........:  <select>
+            <option value=""></option>
+            <option value="Claro"> Claro</option>
+            <option value="Orange">Orange</option>
+            <option value="Vivo">Vivo</option>
+            <option value="TIM">TIM</option>
+            </select><br><br></div>      
+        
+        <div class="col-md-6 col-sm-3 col-xs-3">
+        PDV.......................: <select>
+                    <option value=""></option>
+                    <option value="PDV"> PDV</option>
+                    <option value="Agencia">Agencia</option>
+                    <option value="Financeira">Financeira</option>
+                    <option value="CEI">CEI</option>
+                    <option value="PAB">PAB</option>
+                    </select><br><br></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-sm-3 col-xs-3">
+        Data do acesso: <input type="date" name="data" required> <br><br></div>
+        <div class="col-md-6 col-sm-3 col-xs-3">
+        Hora do acesso: <input type="time" name="horario" required> <br><br></div>
+
+<!-- FIM CAMPOS PARA PREENCHIMENTO --> 
+
+<!-- BOTÃO COM VALIDADOR -->
+    <input align="center" type="submit" onclick="validarSolicitacao()" style="color:white; background-color:rgba(2, 2, 49, 0.89)" value="Enviar solicitação">
+    </fieldset>
+    </form>
+
+<!-- NANING RIGHTS --> 
+    <p class="pwdby" align="right">Powered by 13.49 Coders</p>
+</body>
+</html>

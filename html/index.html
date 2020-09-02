@@ -19,48 +19,11 @@
     <!-- Chamada da linha Style.css  -->
     <link rel="stylesheet" href="..\css\style.css">
 
+    <link rel="text/javascript" src="../js/login.js">
+
 </head>
 
 <!-- FIM DO CABEÇALHO -->
-
-<!-- INICIO JS -->
-
-<script>
-    // Falta criar o banco com usuários e senhas para validar
-
-    
-    
-    // VALIDA O PREENCHIMENTO DOS CAMPOS USUÁRIO E SENHA
-    function validar(){
-        var usuario=formuser.usuario.value;
-        var senha=formuser.senha.value;
-        var opcao=formuser.opcao.value;
-        
-        if (usuario==""){
-            alert("Por favor digite o nome do usuário")
-            formuser.usuario.focus;
-            return false;
-        }
-        if (senha==""){
-            alert("Por favor digite a senha");
-            formuser.senha.focus();
-            return false;
-        }
-
-        // REDIRECIONA PARA A PÁGINA CORRESPONDENTE
-        if (opcao == "solicitante"){
-            window.open("../html/solicitante.html");
-            return
-        }
-        if (opcao == "aprovador"){
-            window.open("../html/aprovador.html");
-        }
-    }
-
-
-</script>
-
-<!-- FIM JS -->
 
 
 
@@ -86,7 +49,7 @@
     <form name="formuser" action="" method="POST">
     <fieldset align="center" heigth="60%">
         <br>
-        Usuário: <input  type="text" name="usuario" required>
+        RACF ou Email: <input  type="text" name="usuario" required>
         Senha: <input type="password" name="senha" required><br>
         <br>
         <INPUT type="radio" NAME="opcao" VALUE="solicitante" required> Solicitante

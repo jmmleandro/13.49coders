@@ -4,23 +4,25 @@
 <!-- INICIO CABEÇALHO -->
 
 <head>
-    <head>
-        <link rel="stylesheet" href="../css/formatacao.css">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        
+    <!-- Ajusta acentuação-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
-        <!-- Código bootstrap em CSS-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Código bootstrap em CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
      
     
-        <!-- Código bootstrap em JS-->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!-- Código bootstrap em JS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     
-        <!-- Chamada da linha Style.css  -->
-        <link rel="stylesheet" href="..\css\style.css">
+    <!-- Chamada da linha Style.css  -->
+    <link rel="stylesheet" href="..\css\style.css">
 
-    </head>
+</head>
+
+<title>SLA - Solicitações de acesso</title>
     
 <!-- FIM DO CABEÇALHO -->
 
@@ -33,7 +35,7 @@
         var telefone=formuser.celular.value;
         var rgCPF=formuser.rgCPF.value;
         var doc=formuser.documento.value;
-        var pdv_id = ;                                     //como recuperar esse valor?
+        var pdv_id;                                         //como recuperar esse valor?
         var data=formuser.data.value;
         var horario=formuser.horario.value;
 
@@ -91,7 +93,6 @@
             Documento: <input  type="text" name="documento" required><br><br><br></div>
 
     </div>
-
    
     <B>DADOS DO ACESSO</b><br><br>
 
@@ -99,14 +100,14 @@
         <div class="col-md-6 col-sm-3 col-xs-3">
         Operadora.........:  <select>
             <option value=""></option>
-            <option value="Claro"> Claro</option>
+            <option value="Claro-NET"> Claro-NET</option>
             <option value="Orange">Orange</option>
             <option value="Vivo">Vivo</option>
             <option value="TIM">TIM</option>
             </select><br><br></div>      
         
         <div class="col-md-6 col-sm-3 col-xs-3">
-        PDV.......................: <select>
+        PDV.......................: <select>                            <!-- Fazer lógica para recuperar do banco-->
                     <option value=""></option>
                     <option value="PDV"> PDV</option>
                     <option value="Agencia">Agencia</option>
@@ -121,7 +122,8 @@
         Data do acesso: <input type="date" name="data" required> <br><br></div>
         <div class="col-md-6 col-sm-3 col-xs-3">
         Hora do acesso: <input type="time" name="horario" required> <br><br></div>
-
+    </div>
+</div>
 <!-- FIM CAMPOS PARA PREENCHIMENTO --> 
 
 <!-- BOTÃO COM VALIDADOR -->

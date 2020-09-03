@@ -18,7 +18,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <!-- Chamada da linha Style.css  -->
-    <link rel="stylesheet" href="..\css\style.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="text/javascript" src="../js/index.js"></script>
 
 </head>
 
@@ -26,44 +28,7 @@
 
 <!-- FIM DO CABEÇALHO -->
 
-<!-- INICIO JS -->
 
-<script>
-    // Falta criar o banco com usuários e senhas para validar
-
-    
-    
-    // VALIDA O PREENCHIMENTO DOS CAMPOS USUÁRIO E SENHA
-    function validar(){
-        var usuario=formuser.usuario.value;
-        var senha=formuser.senha.value;
-        var opcao=formuser.opcao.value;
-        
-        if (usuario==""){
-            alert("Por favor digite o nome do usuário")
-            formuser.usuario.focus;
-            return false;
-        }
-        if (senha==""){
-            alert("Por favor digite a senha");
-            formuser.senha.focus();
-            return false;
-        }
-
-        // REDIRECIONA PARA A PÁGINA CORRESPONDENTE
-        if (opcao == "solicitante"){
-            window.open("../html/solicitante.html");
-            return
-        }
-        if (opcao == "aprovador"){
-            window.open("../html/aprovador.html");
-        }
-    }
-
-
-</script>
-
-<!-- FIM JS -->
 
 <body>
  
@@ -83,23 +48,21 @@
 <!-- FIM DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
 
 
-<!-- CAMPOS PARA PREENCHIMENTO --> 
-    <form name="formuser" action="" method="POST">
-    <fieldset align="center" heigth="60%">
-        <br>
-        Usuário: <input  type="text" name="usuario" required>
-        Senha: <input type="password" name="senha" required><br>
-        <br>
-        <INPUT type="radio" NAME="opcao" VALUE="solicitante" required> Solicitante
-        <INPUT TYPE="radio" NAME="opcao" VALUE="aprovador" required> Aprovador<br><br>
-
+<!-- CAMPOS PARA PREENCHIMENTO -->
+<div class="row">
+    <div class="form-group">
+        RACF ou Email: <input  type="text" id="txtUsuario" required>
+        Senha: <input type="password" id="txtSenha" required><br>
 <!-- FIM CAMPOS PARA PREENCHIMENTO --> 
 
 
 <!-- BOTÃO COM VALIDADOR -->
-        <input align="center" type="submit" onclick="validar()" style="color:white; background-color:rgba(2, 2, 49, 0.89)" value="Login">
-    </fieldset>
-    </form>
+    <button class="btn btn-primary" onclick="validar()">Login</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12" id="divResposta"></div>
+</div>
 
 <!-- NANING RIGHTS --> 
     <footer class="pwdby" align="right">Powered by 13.49 Coders </footer>

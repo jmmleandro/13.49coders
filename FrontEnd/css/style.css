@@ -1,5 +1,5 @@
 .container{
-    border: 3px solid yellowgreen;
+    border: 3px solid white;
     min-height: 500px
     
     }
@@ -19,3 +19,9 @@
 .bordaFiltro{
     border: 1px solid rgb(71, 71, 71);    
    }
+
+.pwdby{
+    color : black;
+    font-size : 9px;
+    font-family : arial,helvetica;
+}

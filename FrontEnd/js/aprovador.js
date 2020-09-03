@@ -86,3 +86,8 @@ function atualizaDash(res){
         alert("Algo deu errado");
     }
 }
+
+function logout(){
+    localStorage.removeItem("pdvUser");
+    window.location = "index.html";
+}

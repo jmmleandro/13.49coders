@@ -27,13 +27,7 @@
     
 <!-- FIM DO CABEÇALHO -->
 
-<!-- INICIO JS -->
-
-
-
-
-<!-- FIM JS -->
-
+<body onload="carregaInfo()">
 
 <!-- DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
 <div class="row">
@@ -48,7 +42,13 @@
 
 
 <!-- FIM DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
-
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-3 bordaFiltro">
+        <div id="divInfoUser"></div>
+    </div> 
+</div>
+<br>
+<div class="row">
     <div class="col-md-12 col-sm-12 col-xs-3 bordaFiltro">
     
     <legend><b><h6>FILTROS</h6></b></legend>
@@ -60,18 +60,18 @@
     </select>
 
     </div>
-
-    <br>
+</div>
+<br>
 
 <!-- BOX DE SOLICITAÇÕES --> 
-    
+<div class="row">
     <div class="col-md-12 col-sm-12 col-xs-3 bordaFiltro">
         
         <legend><b><h6>DADOS DA SOLICITAÇÃO</h6></b></legend><br>
         <div id="listaDeSolic">
         <!-- CHAMAR JS PARA APRESENTAR LISTA-->
     </div>
-
+</div> 
 <!-- FIM BOX DE SOLICITAÇÕES --> 
 
 <!-- NANING RIGHTS --> 

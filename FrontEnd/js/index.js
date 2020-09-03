@@ -43,12 +43,12 @@ function redirecionaPagina(res){
         res.json().then(objUser => logar(objUser));
         
     }
-    else if(res.status == 404){
+    else if(res.status == 403){
         document.getElementById("divResposta").innerHTML = "Senha ou usuário incorreto";
     }
     else{
         res.json().then(result => console.log(result));
-        document.getElementById("divResposta").innerHTML = res;
+        document.getElementById("divResposta").innerHTML = "Senha ou usuário incorreto";
     }
     
     

@@ -4,7 +4,8 @@
 <!-- INICIO CABEÇALHO -->
 
 <head>
-    <link rel="stylesheet" href="../css/formatacao.css">
+    
+    <!-- Ajusta acentuação-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <!-- Código bootstrap em CSS-->
@@ -17,19 +18,23 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <!-- Chamada da linha Style.css  -->
-    <link rel="stylesheet" href="..\css\style.css">
-
-    <link rel="text/javascript" src="../js/login.js">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="../js/aprovador.js"></script>
 
 </head>
 
+<title>SLA - Aprovação de solicitações</title>
+    
 <!-- FIM DO CABEÇALHO -->
 
+<!-- INICIO JS -->
 
 
-<title>SLA - Sistema de Liberação de Acessos</title>
-<body>
- 
+
+
+<!-- FIM JS -->
+
+
 <!-- DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-3"><h5><div align="center"><img src="../img/banner.png" width="100%" height="100%"></div></h5></div>
@@ -38,35 +43,38 @@
     
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-3 fonteSLA"><h1 align="center"> SLA</h1></div>
-    <div class="col-md-12 col-sm-12 col-xs-3 fonteSLALongo"><h5 align="center"> Sistema de Liberação de Acessos </h5></div>
+    <div class="col-md-12 col-sm-12 col-xs-3 fonteSLALongo"><h5 align="center"> Aprovação de acessos </h5></div>
 </div>
 
 
 <!-- FIM DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
 
+    <div class="col-md-12 col-sm-12 col-xs-3 bordaFiltro">
+    
+    <legend><b><h6>FILTROS</h6></b></legend>
+    <select id="selectStatus" onchange="onChangeSelectStatus(this.value)">
+        <option value="0">Inicial</option>
+        <option value="1">Aprovada</option>
+        <option value="2">Negada</option>
+        <option value="3">Cancelada</option>
+    </select>
 
-<!-- CAMPOS PARA PREENCHIMENTO --> 
-    <form name="formuser" action="" method="POST">
-    <fieldset align="center" heigth="60%">
-        <br>
-        RACF ou Email: <input  type="text" name="usuario" required>
-        Senha: <input type="password" name="senha" required><br>
-        <br>
-        <INPUT type="radio" NAME="opcao" VALUE="solicitante" required> Solicitante
-        <INPUT TYPE="radio" NAME="opcao" VALUE="aprovador" required> Aprovador<br><br>
+    </div>
 
-<!-- FIM CAMPOS PARA PREENCHIMENTO --> 
+    <br>
 
+<!-- BOX DE SOLICITAÇÕES --> 
+    
+    <div class="col-md-12 col-sm-12 col-xs-3 bordaFiltro">
+        
+        <legend><b><h6>DADOS DA SOLICITAÇÃO</h6></b></legend><br>
+        <div id="listaDeSolic">
+        <!-- CHAMAR JS PARA APRESENTAR LISTA-->
+    </div>
 
-<!-- BOTÃO COM VALIDADOR -->
-        <input align="center" type="submit" onclick="validar()" style="color:white; background-color:rgba(2, 2, 49, 0.89)" value="Login">
-    </fieldset>
-    </form>
-
-
+<!-- FIM BOX DE SOLICITAÇÕES --> 
 
 <!-- NANING RIGHTS --> 
-    <footer class="pwdby" align="right">Powered by 13.49 Coders </footer>
-
+    <p class="pwdby" align="right">Powered by 13.49 Coders</p>
 </body>
 </html>

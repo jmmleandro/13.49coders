@@ -4,7 +4,8 @@
 <!-- INICIO CABEÇALHO -->
 
 <head>
-    <link rel="stylesheet" href="../css/formatacao.css">
+
+    <!-- Ajusta acentuação-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <!-- Código bootstrap em CSS-->
@@ -16,22 +17,23 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-        <!-- Chamada da linha Style.css  -->
-        <link rel="stylesheet" href="..\css\style.css">
+    <!-- Chamada da linha Style.css  -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="text/javascript" src="../js/index.js"></script>
 
 </head>
-    
+
+<title>SLA - Sistema de Liberação de Acessos</title>
+
 <!-- FIM DO CABEÇALHO -->
 
-<!-- INICIO JS -->
 
 
-
-
-<!-- FIM JS -->
-
-
+<body>
+ 
 <!-- DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
+
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-3"><h5><div align="center"><img src="../img/banner.png" width="100%" height="100%"></div></h5></div>
 </div>
@@ -39,38 +41,31 @@
     
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-3 fonteSLA"><h1 align="center"> SLA</h1></div>
-    <div class="col-md-12 col-sm-12 col-xs-3 fonteSLALongo"><h5 align="center"> Aprovação de acessos </h5></div>
+    <div class="col-md-12 col-sm-12 col-xs-3 fonteSLALongo"><h5 align="center"> Sistema de Liberação de Acessos </h5></div>
 </div>
 
 
 <!-- FIM DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
 
-    <div class="col-md-12 col-sm-12 col-xs-3 bordaFiltro">
-    <form name="formuser" action="" method="POST">
-        <fieldset align="left" heigth="60%">
-            <legend><b><h6>FILTROS</h6></b></legend>
-            <select>
-            <option value="Inicial"> Inicial</option>
-            <option value="Aprovada">Aprovada</option>
-            <option value="Negada">Negada</option>
-            <option value="Cancelada">Cancelada</option>
-            </select>
-            <input type="submit" onclick="" style="color:white; background-color:rgba(2, 2, 49, 0.89)" value="Filtrar"> <br><br>
-        </fieldset>
-    </form>
+
+<!-- CAMPOS PARA PREENCHIMENTO -->
+<div class="row">
+    <div class="form-group">
+        RACF ou Email: <input  type="text" id="txtUsuario" required>
+        Senha: <input type="password" id="txtSenha" required><br>
+<!-- FIM CAMPOS PARA PREENCHIMENTO --> 
+
+
+<!-- BOTÃO COM VALIDADOR -->
+    <button class="btn btn-primary" onclick="validar()">Login</button>
     </div>
+</div>
+<div class="row">
+    <div class="col-md-12" id="divResposta"></div>
+</div>
 
-    <br>
-
-    <div class="col-md-12 col-sm-12 col-xs-3 bordaFiltro">
-        <form name="formuser" action="" method="POST">
-            <fieldset align="left" heigth="60%">
-            <legend><b><h6>DADOS DA SOLICITAÇÃO</h6></b></legend><br>
-            </fieldset>
-        </form>
-        </div>
-    
 <!-- NANING RIGHTS --> 
-    <p class="pwdby" align="right">Powered by 13.49 Coders</p>
+    <footer class="pwdby" align="right">Powered by 13.49 Coders </footer>
+
 </body>
 </html>

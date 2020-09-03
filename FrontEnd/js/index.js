@@ -47,6 +47,7 @@ function redirecionaPagina(res){
         document.getElementById("divResposta").innerHTML = "Senha ou usuário incorreto";
     }
     else{
+        res.json().then(result => console.log(result));
         document.getElementById("divResposta").innerHTML = res;
     }
     

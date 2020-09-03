@@ -16,6 +16,8 @@ function carregaInfo(){
                             <strong>Telefone: </strong> ${objUser.telefone}<br>
                         </div>
                         `
+    document.getElementById("divInfoUser").innerHTML = `${linhaHTML}`;
+    onChangeSelectStatus(0);
 }
 
 // VALIDA O PREENCHIMENTO DOS CAMPOS USUÁRIO E SENHA
@@ -32,16 +34,55 @@ function trataConteudoDaLista(lista){
     // aqui efetivamente eu quero trabalhar com os objetos que eu recebi do BackEnd
     var conteudoHTML = "";
     for (i=0; i<lista.length; i++){
-        var solicitacao = lista[i];
+        var solic = lista[i];
 
-        conteudoHTML = conteudoHTML + `<div class="row">
-                                           <div class="col-1">${solicitacao.numSeq}</div>
-                                          <div class="col-2">${solicitacao.dataSolicitacao}</div>
-                                          <div class="col-2">${solicitacao.operadora}</div>
-                                          <div class="col-2">${solicitacao.nomeTecnico}</div>
-                                        </div>`;
+        conteudoHTML = conteudoHTML +`<div class="row">
+                                        <div class="col-1"> ${solic.numSeq} </div>
+                                        <div class="col-2"> ${solic.dataSolicitacao} ${solic.horaSolicitacao} </div>
+                                        <div class="col-4"> ${solic.nomeTecnico} <br>
+                                                            ${solic.documento} / ${solic.telefone} </div>
+                                        <div class="col-3"> ${solic.pdv.nome} </div>
+                                        <div class="col-2"> <button type="button" class="btn btn-success" 
+                                                                    onclick="atualizarStatus(${solic.numSeq},1)"> &nbsp; </button>
+                                                            <button type="button" class="btn btn-danger" 
+                                                                    onclick="atualizarStatus(${solic.numSeq},2)"> &nbsp; </button>
+                                                            <button type="button" class="btn btn-secondary" 
+                                                                    onclick="atualizarStatus(${solic.numSeq},3)"> &nbsp; </button>
+                                        </div>
+                                    </div>`;
 
     }
     document.getElementById("listaDeSolic").innerHTML = `${conteudoHTML}`;
 
+}
+
+function atualizarStatus(numReq, novoStatus){
+    var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        //DECLARA BODY DO REST COMO RACF
+        var raw = JSON.stringify({"numSeq": numReq,"situacao": novoStatus});
+
+        var requestOptions = {
+            method: 'PUT',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        url = "http://localhost:8088/solicitacao/atualiza"
+
+        fetch(url, requestOptions)
+        .then(response => atualizaDash(response))
+        .catch(error => console.log('error', error));
+}
+
+function atualizaDash(res){
+    if(res.status == 200){
+        onChangeSelectStatus(0);
+        document.getElementById("selectStatus").selectedIndex = 0;
+    }
+    else{
+        alert("Algo deu errado");
+    }
 }

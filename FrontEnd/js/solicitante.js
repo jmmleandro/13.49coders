@@ -108,12 +108,15 @@ function cadastrarSolicitacao(){
 }
 
 function confirmaGravacao(res){
-    if(res.status == 201){
-        $('#modalSucesso').modal('show');
-        $('#paragMsg').innerHTML("Solicitação aberta!")
-    }
-
-
-
     
+    if(res.status == 201){
+        //$('#modalSucesso').modal('show');
+        $('#modal-body').text('Solicitaçao de acesso aberta!');
+        $('#modalSucesso').modal('show');
+    }
+    
+}
+
+function recarregaPagina(){
+    window.location =  "solicitante.html";
 }

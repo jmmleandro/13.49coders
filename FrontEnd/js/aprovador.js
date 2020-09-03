@@ -37,11 +37,10 @@ function trataConteudoDaLista(lista){
         var solic = lista[i];
 
         conteudoHTML = conteudoHTML +`<div class="row">
-                                        <div class="col-1"> ${solic.numSeq} </div>
-                                        <div class="col-2"> ${solic.dataSolicitacao} ${solic.horaSolicitacao} </div>
-                                        <div class="col-4"> ${solic.nomeTecnico} <br>
-                                                            ${solic.documento} / ${solic.telefone} </div>
+                                        <div class="col-1"> ${solic.nomeTecnico} </div>
+                                        <div class="col-4"> ${solic.operadora} <br>
                                         <div class="col-3"> ${solic.pdv.nome} </div>
+                                        <div class="col-2"> ${solic.dataSolicitacao} ${solic.horaSolicitacao} </div>
                                         <div class="col-2"> <button type="button" class="btn btn-success" 
                                                                     onclick="atualizarStatus(${solic.numSeq},1)"> &nbsp; </button>
                                                             <button type="button" class="btn btn-danger" 
@@ -85,4 +84,9 @@ function atualizaDash(res){
     else{
         alert("Algo deu errado");
     }
+}
+
+function logout(){
+    localStorage.removeItem("pdvUser");
+    window.location = "index.html";
 }

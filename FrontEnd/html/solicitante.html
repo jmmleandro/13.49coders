@@ -31,7 +31,7 @@
     
     
 <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-3 fonteSLA"><h1 align="center"> SLA</h1></div>
+    <div class="col-md-12 col-sm-12 col-xs-3 fonteSLA"><h1 align="center"> SLA </h1></div>
     <div class="col-md-12 col-sm-12 col-xs-3 fonteSLALongo"><h5 align="center"> Solicitação de acessos</h5></div>
 </div>
 
@@ -86,7 +86,24 @@
     </div>
 </div>
 <!-- FIM CAMPOS PARA PREENCHIMENTO --> 
-
+<div class="modal" tabindex="-1" role="dialog" id="modalSucesso">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Solicitação de acesso</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modal-body">
+          <p></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeBtn" onclick="recarregaPagina()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <!-- BOTÃO COM VALIDADOR -->
     <button align="center" onclick="cadastrarSolicitacao()" style="color:white; background-color:rgba(2, 2, 49, 0.89)">Enviar solicitação</button>
 

@@ -72,8 +72,6 @@ function cadastrarSolicitacao(){
         solicValida = false;
     }
 
-    console.log(pdv);
-
     if(solicValida){
 
         var myHeaders = new Headers();
@@ -100,7 +98,7 @@ function cadastrarSolicitacao(){
         };
 
         fetch("http://localhost:8088/solicitacao/nova", requestOptions)
-        .then(response => console.log(response))
+        .then(response => confirmaGravacao(response))
         //.then(result => console.log(result))
         .catch(error => console.log('error', error));
     }
@@ -109,3 +107,16 @@ function cadastrarSolicitacao(){
     }
 }
 
+function confirmaGravacao(res){
+    
+    if(res.status == 201){
+        //$('#modalSucesso').modal('show');
+        $('#modal-body').text('Solicitaçao de acesso aberta!');
+        $('#modalSucesso').modal('show');
+    }
+    
+}
+
+function recarregaPagina(){
+    window.location =  "solicitante.html";
+}

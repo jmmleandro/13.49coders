@@ -86,7 +86,25 @@
     </div>
 </div>
 <!-- FIM CAMPOS PARA PREENCHIMENTO --> 
-
+<div class="modal" tabindex="-1" role="dialog" id="modalSucesso">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Solicitação de acesso</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="paragMsg"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <!-- BOTÃO COM VALIDADOR -->
     <button align="center" onclick="cadastrarSolicitacao()" style="color:white; background-color:rgba(2, 2, 49, 0.89)">Enviar solicitação</button>
 

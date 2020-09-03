@@ -28,44 +28,47 @@
 
 <!-- FIM DO CABEÇALHO -->
 
-
-
 <body>
- 
+<div class="container">
+
 <!-- DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
 
-<div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-3"><h5><div align="center"><img src="../img/banner.png" width="100%" height="100%"></div></h5></div>
-</div>
-    
-    
-<div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-3 fonteSLA"><h1 align="center"> SLA</h1></div>
-    <div class="col-md-12 col-sm-12 col-xs-3 fonteSLALongo"><h5 align="center"> Sistema de Liberação de Acessos </h5></div>
-</div>
-
-
-<!-- FIM DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
-
-
-<!-- CAMPOS PARA PREENCHIMENTO -->
-<div class="row">
-    <div class="form-group">
-        RACF ou Email: <input  type="text" id="txtUsuario" required>
-        Senha: <input type="password" id="txtSenha" required><br>
-<!-- FIM CAMPOS PARA PREENCHIMENTO --> 
-
-
-<!-- BOTÃO COM VALIDADOR -->
-    <button class="btn btn-primary" onclick="validar()">Login</button>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-3"><h5><div align="center"><img src="../img/banner.png" width="100%" height="100%"></div></h5></div> 
     </div>
-</div>
-<div class="row">
-    <div class="col-md-12" id="divResposta"></div>
-</div>
+    
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-3 fonteSLALongo"><h4 align="center"> Sistema de Liberação de Acessos </h4>
+        </div>
+    </div>
 
-<!-- NANING RIGHTS --> 
+
+    <!-- FIM DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
+
+    <br>
+
+    <!-- CAMPOS PARA PREENCHIMENTO -->
+    <div class="row">
+        <div class="form-group mx-auto">
+            <label for="txtLogin">Identificação RACF/E-mail</label>
+            <input type="text" class="form-control" id="txtUsuario" aria-describedby="letrasMiudas">
+
+            <label for="txtSenha">Senha</label>
+            <input type="password" class="form-control" id="txtSenha">
+        </div>
+    </div>
+    <!-- FIM CAMPOS PARA PREENCHIMENTO --> 
+
+    <!-- BOTÃO COM VALIDADOR -->
+    <div class="row">
+        <br><button class="btn btn-primary mx-auto" onclick="validar()">Login</button>
+        <div class="col-md-12" id="divResposta">
+        </div>
+    </div>
+
+    <!-- NANING RIGHTS --> 
     <footer class="pwdby" align="right">Powered by 13.49 Coders </footer>
 
+</div>
 </body>
 </html>

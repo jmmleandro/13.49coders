@@ -11,14 +11,10 @@
     <!-- Código bootstrap em CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
      
-    
-    <!-- Código bootstrap em JS-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/solicitante.js"></script>
     
     <!-- Chamada da linha Style.css  -->
-    <link rel="stylesheet" href="..\css\style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
@@ -26,35 +22,7 @@
     
 <!-- FIM DO CABEÇALHO -->
 
-
-<!-- INICIO JS -->
-<script>
-    function validarSolicitacao(){
-        var nome_tecnico=formuser.nomeTecnico.value;
-        var operadora ;                                     //como recuperar esse valor?
-        var telefone=formuser.celular.value;
-        var rgCPF=formuser.rgCPF.value;
-        var doc=formuser.documento.value;
-        var pdv_id;                                         //como recuperar esse valor?
-        var data=formuser.data.value;
-        var horario=formuser.horario.value;
-
-        if(nome_tecnico=="" || nome_tecnico.indexOf(" ")==-1){
-            alert("Por favor digite o nome e sobrenome do técnico");
-            formuser.nome_tecnico.focus;
-            return false;
-        }
-        // ADICIONAR A VALIDAÇÃO DO CPF --> Fazer fork do existente no GIT
-        //if(rgCPF==CPF){
-        //
-        //}
-    }
-
-
-</script>
-
-<!-- FIM JS -->
-
+<body onload="carregaSelectPDV()">
 
 <!-- DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
 <div class="row">
@@ -73,24 +41,22 @@
 <!-- CAMPOS PARA PREENCHIMENTO --> 
 
 <div class="col-md-12 col-sm-12 col-xs-3 bordaFiltro">
-    <form name="formuser" action="" method="POST">
-    <fieldset align="left" heigth="60%">
     <legend><b><h6>DADOS DO REPRESENTANTE</h6></b></legend><br>
 
     <div class="row">
         <div class="col-md-6 col-sm-3 col-xs-3">
-            Nome do técnico: <input  type="text" name="nomeTecnico" placeholder="Nome completo" size="50" required></div>
+            Nome do técnico: <input  type="text" id="txtNomeTecnico" placeholder="Nome completo" size="50" required></div>
         <div class="col-md-6 col-sm-3 col-xs-3">
-            Celular.........: <input  type="text" name="celular" placeholder="(XX) XXXXX XXXX" required><br><br></div>
+            Celular.........: <input  type="text" id="txtCelular" placeholder="(XX) XXXXX XXXX" required><br><br></div>
 
     </div>
 
     <div class="row">
         <div class="col-md-6 col-sm-3 col-xs-3">
-            Tipo de documento:  <INPUT TYPE="radio" NAME="rgCPF" VALUE="RG" required> RG
-            <INPUT TYPE="radio" NAME="rgCPF" VALUE="CPF" required> CPF<br><br></div>
+            Tipo de documento:  <INPUT TYPE="radio" id="rgCPF" VALUE="RG" required> RG
+            <INPUT TYPE="radio" id="rgCPF" VALUE="CPF" required> CPF<br><br></div>
         <div class="col-md-6 col-sm-3 col-xs-3">
-            Documento: <input  type="text" name="documento" required><br><br><br></div>
+            Documento: <input  type="text" id="txtDocumento" required><br><br><br></div>
 
     </div>
    
@@ -98,33 +64,39 @@
 
     <div class="row">
         <div class="col-md-6 col-sm-3 col-xs-3">
+            Operadora: <input  type="text" id="txtOperadora" required><br><br><br></div>
+        <!--div class="col-md-6 col-sm-3 col-xs-3">
         Operadora.........:  <select>
             <option value=""></option>
             <option value="Claro-NET"> Claro-NET</option>
             <option value="Orange">Orange</option>
             <option value="Vivo">Vivo</option>
             <option value="TIM">TIM</option>
-            </select><br><br></div>      
+            </select><br><br></div-->      
         
-        <div  d="listaDePDV"class="col-md-6 col-sm-3 col-xs-3"></div>
+        <div id="listaDePDV"class="col-md-6 col-sm-3 col-xs-3"></div>
         
     </div>
 
     <div class="row">
         <div class="col-md-6 col-sm-3 col-xs-3">
-        Data do acesso: <input type="date" name="data" required> <br><br></div>
+        Data do acesso: <input type="date" id="txtData" required> <br><br></div>
         <div class="col-md-6 col-sm-3 col-xs-3">
-        Hora do acesso: <input type="time" name="horario" required> <br><br></div>
+        Hora do acesso: <input type="time" id="txtHorario" required> <br><br></div>
     </div>
 </div>
 <!-- FIM CAMPOS PARA PREENCHIMENTO --> 
 
 <!-- BOTÃO COM VALIDADOR -->
-    <input align="center" type="submit" onclick="validarSolicitacao()" style="color:white; background-color:rgba(2, 2, 49, 0.89)" value="Enviar solicitação">
-    </fieldset>
-    </form>
+    <button align="center" onclick="cadastrarSolicitacao()" style="color:white; background-color:rgba(2, 2, 49, 0.89)">Enviar solicitação</button>
 
 <!-- NANING RIGHTS --> 
     <p class="pwdby" align="right">Powered by 13.49 Coders</p>
+
+    <!-- Código bootstrap em JS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
 </body>
 </html>

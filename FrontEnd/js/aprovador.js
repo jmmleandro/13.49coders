@@ -27,6 +27,18 @@ function onChangeSelectStatus(status){
     fetch(url)   // "promessa de execução"
        .then(res => res.json())                // vou extrair o JSON do resultado que vier
        .then(lista => trataConteudoDaLista(lista));
+
+    var botoesExport = `<a href="geradorPDF.html?status=${status}" target="_blank">PDF <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-earmark-text-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm7 2l.5-2.5 3 3L10 5a1 1 0 0 1-1-1zM4.5 8a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"/>
+  </svg></a><br>
+    <a href="geradorCSV.html?status=${status}" target="_blank">CSV <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-spreadsheet-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M12 0H4a2 2 0 0 0-2 2v4h12V2a2 2 0 0 0-2-2zm2 7h-4v2h4V7zm0 3h-4v2h4v-2zm0 3h-4v3h2a2 2 0 0 0 2-2v-1zm-5 3v-3H6v3h3zm-4 0v-3H2v1a2 2 0 0 0 2 2h1zm-3-4h3v-2H2v2zm0-3h3V7H2v2zm4 0V7h3v2H6zm0 1h3v2H6v-2z"/>
+  </svg></a>`;
+
+    document.getElementById("exportar").innerHTML = botoesExport;
+    fetch(url)
+    .then(res => res.json())
+    .then(lista => preencheRelatorio(lista));
 }
 
 
@@ -117,3 +129,4 @@ function formataDateSQL(isoFormatDateString){
     var jsDate = dateParts[2]+'/'+dateParts[1]+'/'+dateParts[0];
     return jsDate;
 }
+

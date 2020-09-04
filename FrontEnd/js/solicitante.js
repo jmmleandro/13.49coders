@@ -20,7 +20,7 @@ function trataConteudoDaLista(lista){
 
         conteudoHTML = conteudoHTML +`<option value="${pdv.id}">${pdv.nome}</option>`;
     }
-    document.getElementById("listaDePDV").innerHTML = `<select class="form-control form-control-lg" id="selectPDV"> ${conteudoHTML} <select>`;
+    document.getElementById("listaDePDV").innerHTML = `<select id="selectPDV"> ${conteudoHTML} <select>`;
 
 }
 

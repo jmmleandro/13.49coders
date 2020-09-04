@@ -11,12 +11,6 @@
     <!-- Código bootstrap em CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
  
-
-    <!-- Código bootstrap em JS-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
     <!-- Chamada da linha Style.css  -->
     <link rel="stylesheet" href="../css/style.css">
     <script type="text/javascript" src="../js/aprovador.js"></script>
@@ -32,13 +26,7 @@
 
 <!-- DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
 <div class="row">
-    <div class="col-md-11 col-sm-11 col-xs-3"><h5><div align="center"><img src="../img/banner.png" width="100%" height="100%"></div></h5></div>
-    <div class="col-md-1 col-sm-1 col-xs-1"><h5><div align="left">
-        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg" onclick="logout()">
-        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
-        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-      </svg>
-    </div></h5></div>
+    <div class="col-md-12 col-sm-12 col-xs-3"><h5><div align="center"><img src="../img/banner.png" width="100%" height="100%"></div></h5></div>
 </div>
     
     
@@ -49,40 +37,40 @@
 
 <!-- FIM DEFINIÇÃO DE IMAGEM LOGO E TITULO --> 
 <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-3 bordaFiltro">
-        <div id="divInfoUser"></div>
-    </div> 
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" id="linkFoto"></div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" id="dadosUser"></div>
+    <div class="col-md-6 col-sm-6 col-xs-6 text-center ">
+        <legend><b><h6>FILTROS</h6></b></legend>
+        <select id="selectStatus" onchange="onChangeSelectStatus(this.value)">
+            <option value="0">Inicial</option>
+            <option value="1">Aprovada</option>
+            <option value="2">Negada</option>
+            <option value="3">Cancelada</option>
+        </select>
+    </div>
+    
 </div>
 <br>
 <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-3 bordaFiltro">
     
-    <legend><b><h6>FILTROS</h6></b></legend>
-    <select id="selectStatus" onchange="onChangeSelectStatus(this.value)">
-        <option value="0">Inicial</option>
-        <option value="1">Aprovada</option>
-        <option value="2">Negada</option>
-        <option value="3">Cancelada</option>
-    </select>
-
-    </div>
 </div>
 <br>
 
 <!-- BOX DE SOLICITAÇÕES --> 
 <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-3 bordaFiltro">
-        
-        <legend><b><h6>DADOS DA SOLICITAÇÃO</h6></b></legend><br>
-        <div id="listaDeSolic">
-        <!-- CHAMAR JS PARA APRESENTAR LISTA-->
-    </div>
-</div> 
+    <div id="divTabelaSolic" class="col-md-12 col-sm-12 col-xs-3"></div>
+</div>
 <!-- FIM BOX DE SOLICITAÇÕES --> 
 
 <!-- NANING RIGHTS --> 
     <p class="pwdby" align="right">Powered by 13.49 Coders</p>
 
-</div>
+  </div>
+
+<!-- Código bootstrap em JS-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
 </body>
 </html>

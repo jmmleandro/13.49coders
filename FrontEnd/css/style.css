@@ -18,10 +18,11 @@
 
 .bordaFiltro{
     border: 1px solid rgb(71, 71, 71);    
-   }
+}
 
 .pwdby{
     color : black;
     font-size : 9px;
     font-family : arial,helvetica;
 }
+
